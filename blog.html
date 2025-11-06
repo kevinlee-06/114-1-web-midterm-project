@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章 Blog</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li><a href="index.html">首頁 Home</a></li>
+            <li><a href="about.html">關於 About</a></li>
+            <li><a href="gallery.html">作品 Gallery</a></li> 
+            <li><a class="active" href="blog.html">文章 Blog</a></li>
+            <li><a href="showcase.html">修ㄎㄟㄙ Showcase</a></li>
+
+        </ul>
+    </nav>
+    <main class="main-content">
+        <section id="blog-toc">
+            <h2>文章 Blog</h2>
+            <p style="text-align: center; margin-top: -20px; margin-bottom: 30px;">點擊標題可跳轉至完整文章。</p>
+            <div class="blog-list-container">
+                <article class="blog-post-preview">
+                    <h3><a href="#post-1">攝影基礎：淺談曝光三要素 (ISO、光圈、快門)</a></h3>
+                    <p class="post-excerpt">
+                        想要拍出理想的照片，就必須了解什麼是曝光三要素。ISO、光圈和快門速度是如何協同作用來決定你照片的明暗與風格呢...
+                    </p>
+                </article>
+                <article class="blog-post-preview">
+                    <h3><a href="showcase.html#post-1">技術實驗：使用 HTML Canvas 繪製圖形</a></h3>
+                    <p class="post-excerpt">
+                        HTML <code>&lt;canvas&gt;</code> 元素提供了強大的 2D 繪圖能力。在這裡，我展示了一個我用 JavaScript 製作的簡單畫布...
+                    </p>
+                </article>
+                <article class="blog-post-preview">
+                    <h3><a href="showcase.html#post-2">懷舊技術：你還記得 HTML Image Map 嗎？</a></h3>
+                    <p class="post-excerpt">
+                        Image Map（影像地圖）是一個相對古早的 HTML 技術，它允許你在同一張圖片上定義多個可點擊的「熱區」...
+                    </p>
+                </article>
+            </div>
+            <hr class="blog-divider">
+        </section>
+        <section id="full-articles">
+            <article class="blog-post" id="post-1">
+                <h3>攝影基礎：淺談曝光三要素 (ISO、光圈、快門)</h3>
+                <p>想要拍出理想的照片，就必須了解什麼是曝光三要素。ISO（感光度）、光圈（Aperture）和快門速度（Shutter Speed）是如何協同作用來決定你照片的明暗與風格呢？</p>
+                
+                <h4>1. 光圈 (Aperture)</h4>
+                <p>光圈是鏡頭中控制光線進入相機的「孔洞」大小，通常以 f 值表示 (如 f/1.8, f/4, f/16)。</p>
+                <ul>
+                    <li><strong>f 值越小 (如 f/1.8)</strong>：光圈越大，進光量越多，背景越模糊（景深淺）。</li>
+                    <li><strong>f 值越大 (如 f/16)</strong>：光圈越小，進光量越少，背景越清晰（景深深）。</li>
+                </ul>
+
+                <h4>2. 快門速度 (Shutter Speed)</h4>
+                <p>快門是相機感光元件前方的「簾幕」，快門速度決定了它打開多久，通常以秒表示 (如 1/1000s, 1/60s, 10s)。</p>
+                <ul>
+                    <li><strong>速度越快 (如 1/1000s)</strong>：進光時間短，能「凍結」高速移動的物體。</li>
+                    <li><strong>速度越慢 (如 10s)</strong>：進光時間長，會產生「動態模糊」，例如拍攝車軌或絲絹般的流水 (需使用腳架)。</li>
+                </ul>
+
+                <h4>3. ISO (感光度)</h4>
+                <p>ISO 是指感光元件對光線的敏感程度 (如 ISO 100, ISO 1600, ISO 6400)。</p>
+                <ul>
+                    <li><strong>ISO 越低 (如 100)</strong>：敏感度低，畫質最純淨，適合光線充足的環境。</li>
+                    <li><strong>ISO 越高 (如 6400)</strong>：敏感度高，能在低光環境中拍攝，但會增加「噪點」使畫質下降。</li>
+                </ul>
+                <p><strong>總結：</strong> 這三者是互相連動的。例如，在光線不足時，你可以「開大光圈 (f值調小)」、「放慢快TTAG_11)」、「提高 ISO」來獲得正確的曝光。如何取捨，就取決於你想要的藝術效果（例如景深或動態模糊）。</p>
+                <a href="#blog-toc" class="back-to-top">▲ 返回目錄</a>
+            </article>
+        </section>
+    </main>
+<footer class="site-footer">
+    <p>&copy; 2025 Kevin Lee. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
