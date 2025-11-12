@@ -5,12 +5,6 @@ body {
     color: #333; 
 }
 
-.pre-load, .pre-load img {
-    width: 0;
-    height: 0;
-    opacity: 0;
-}
-
 .navbar {
     background-color: #ffffff; 
     width: 100%;
