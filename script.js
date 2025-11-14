@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('nightCanvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        canvas.width = canvas.offsetWidth; 
+        canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        gradient.addColorStop(0, '#000000'); 
+        gradient.addColorStop(0, '#000000');
         gradient.addColorStop(1, '#001f3f');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -66,7 +66,11 @@ function changeTableWidth(width) {
 function changeBorderWidth(width) {
     const cells = document.querySelectorAll('#dataTable td');
     cells.forEach(cell => {
-        cell.style.borderWidth = width + 'px';
+        /*
+         * 我們不再設定 cell.style.borderWidth
+         * 而是設定 CSS 變數 '--simulated-border-width' 的值
+         */
+        cell.style.setProperty('--simulated-border-width', width + 'px');
     });
 }
 
@@ -82,91 +86,91 @@ function resetTable() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = lightbox.querySelector('.lightbox-image');
-const lightboxClose = lightbox.querySelector('.lightbox-close');
-const lightboxPrev = lightbox.querySelector('.lightbox-prev');
-const lightboxNext = lightbox.querySelector('.lightbox-next');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+    const lightboxNext = lightbox.querySelector('.lightbox-next');
 
-const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+    const lightboxCounter = lightbox.querySelector('.lightbox-counter');
 
-const imageSources = [];
-galleryItems.forEach(item => {
-    imageSources.push(item.querySelector('img').src);
-});
-
-let currentIndex = 0;
-function updateLightboxImage(index) {
-    if (index < 0 || index >= imageSources.length) {
-        console.error("Index out of bounds");
-        return;
-    }
-    lightboxImage.src = imageSources[index];
-    currentIndex = index;
-    lightboxCounter.textContent = `Image ${index + 1}  of  ${imageSources.length}`;
-}
-
-function openLightbox(index) {
-    updateLightboxImage(index);
-    lightbox.classList.add('active');
-}
-function closeLightbox() {
-    lightbox.classList.remove('active');
-    lightboxImage.src = '';
-    lightboxCounter.textContent = ''; 
-}
-function showNextImage() {
-    let nextIndex = currentIndex + 1;
-    if (nextIndex >= imageSources.length) {
-        nextIndex = 0;
-    }
-    updateLightboxImage(nextIndex);
-}
-function showPrevImage() {
-    let prevIndex = currentIndex - 1;
-    if (prevIndex < 0) {
-        prevIndex = imageSources.length - 1;
-    }
-    updateLightboxImage(prevIndex);
-}
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        openLightbox(index);
+    const imageSources = [];
+    galleryItems.forEach(item => {
+        imageSources.push(item.querySelector('img').src);
     });
-});
 
-lightboxClose.addEventListener('click', closeLightbox);
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
-    }
-});
-
-lightboxNext.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNextImage();
-});
-
-lightboxPrev.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrevImage();
-});
-
-document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) {
-        return;
+    let currentIndex = 0;
+    function updateLightboxImage(index) {
+        if (index < 0 || index >= imageSources.length) {
+            console.error("Index out of bounds");
+            return;
+        }
+        lightboxImage.src = imageSources[index];
+        currentIndex = index;
+        lightboxCounter.textContent = `Image ${index + 1}  of  ${imageSources.length}`;
     }
 
-    if (e.key === 'Escape') {
-        closeLightbox();
+    function openLightbox(index) {
+        updateLightboxImage(index);
+        lightbox.classList.add('active');
     }
-    if (e.key === 'ArrowRight') {
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImage.src = '';
+        lightboxCounter.textContent = '';
+    }
+    function showNextImage() {
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= imageSources.length) {
+            nextIndex = 0;
+        }
+        updateLightboxImage(nextIndex);
+    }
+    function showPrevImage() {
+        let prevIndex = currentIndex - 1;
+        if (prevIndex < 0) {
+            prevIndex = imageSources.length - 1;
+        }
+        updateLightboxImage(prevIndex);
+    }
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            openLightbox(index);
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
         showNextImage();
-    }
-    if (e.key === 'ArrowLeft') {
+    });
+
+    lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
         showPrevImage();
-    }
-});
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) {
+            return;
+        }
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+        if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+        if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        }
+    });
 });

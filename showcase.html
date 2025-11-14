@@ -1,166 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav class="navbar">
-    <ul class="navbar-nav">
-        <li><a href="index.html">首頁 Home</a></li>
-        <li><a href="about.html">關於 About</a></li>
-        <li><a href="gallery.html">作品 Gallery</a></li>
-        <li><a href="blog.html">文章 Blog</a></li>
-        <li><a class="active" href="showcase.html">修ㄎㄟㄙ Showcase</a></li>
-    </ul>
-</nav>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li><a href="index.html">首頁 Home</a></li>
+            <li><a href="about.html">關於 About</a></li>
+            <li><a href="gallery.html">作品 Gallery</a></li>
+            <li><a href="blog.html">文章 Blog</a></li>
+            <li><a class="active" href="showcase.html">Showcase</a></li>
+        </ul>
+    </nav>
 
-<main class="main-content">
-    <section id="full-articles">
-        <article class="blog-post" id="post-1">
-            <h3>Canvas artwork</h3>
-            <canvas id="nightCanvas" class="blog-canvas"></canvas>
-        </article>
+    <main class="main-content">
+        <section id="full-articles">
+            <article class="blog-post" id="post-1">
+                <h3>Canvas artwork</h3>
+                <canvas id="nightCanvas" class="blog-canvas"></canvas>
+            </article>
 
-        <article class="blog-post" id="post-2">
-            <h3>HTML Image Map</h3>
-            <figure>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg" alt="日本國旗 Image Map 範例" usemap="#japan-flag-map" class="blog-image-map" width="400">
-            
-                <map name="japan-flag-map">
-                    <area shape="circle" coords="200,130,80" href="https://www.japan.go.jp/" alt="日本國旗紅色區域" >
-                </map>
-                <figcaption>這是一張日本國旗。點擊中央的紅色圓形區域會觸發跳轉。</figcaption>
-            </figure>
-        </article>
+            <article class="blog-post" id="post-2">
+                <h3>HTML Image Map</h3>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg"
+                        alt="日本國旗 Image Map 範例" usemap="#japan-flag-map" class="blog-image-map" width="400">
 
-        <article class="blog-post" id="post-3">
-            <h3>Table Styler</h3>
-            <table id="dataTable">
-                <tr class="b">
-                    <td>Math</td>
-                    <td>English</td>
-                    <td>Prog.</td>
-                </tr>
-                <tr class="a">
-                    <td>90</td>
-                    <td>60</td>
-                    <td>80</td>
-                </tr>
-                <tr class="a">
-                    <td>80</td>
-                    <td>86</td>
-                    <td>98</td>
-                </tr>
-            </table>
-            <h4>Change Table Width</h4>
-            <button onclick="changeTableWidth(200)">200px</button>
-            <button onclick="changeTableWidth(500)">500px</button>
-            <h4>Change Border and Spacing Width</h4>
-            <button onclick="changeBorderWidth(1)">1px</button>
-            <button onclick="changeBorderWidth(10)">10px</button>
-            <button onclick="changeBorderWidth(20)">20px</button>
-            <h4>Change Table Color</h4>
-            <button onclick="changeTableColor('#ffc5c8')" class="red"></button>
-            <button onclick="changeTableColor('#c7ffc5')" class="green"></button>
-            <button onclick="changeTableColor('#c5e0ff')" class="blue"></button>
-            <button onclick="changeTableColor('#ffd7c5')" class="oran"></button>
-            <h4>Reset</h4>
-            <button onclick="resetTable()">Reset</button>
-        </article>
+                    <map name="japan-flag-map">
+                        <area shape="circle" coords="200,130,80" href="https://www.japan.go.jp/" alt="日本國旗紅色區域">
+                    </map>
+                    <figcaption>這是一張日本國旗。點擊中央的紅色圓形區域會觸發跳轉。</figcaption>
+                </figure>
+            </article>
 
-        <article class="blog-post" id="post-4">
-            <h3>Image Hover Overlay Effect & Polaroid Image Switcher</h3>
-            <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="photos/1.webp" alt="柴犬與烤肉">
-                <div class="overlay">
-                    <h3 class="overlay-title">柴犬與烤肉</h3>
-                    <div class="overlay-meta">
-                        <span>48mm</span>
-                        <span>f/5.0</span>
-                        <span>1/50s</span>
-                        <span>ISO 2500</span>
+            <article class="blog-post" id="post-3">
+                <h3>Table Styler</h3>
+                <table id="dataTable">
+                    <tr class="b">
+                        <td>Math</td>
+                        <td>English</td>
+                        <td>Prog.</td>
+                    </tr>
+                    <tr class="a">
+                        <td>90</td>
+                        <td>60</td>
+                        <td>80</td>
+                    </tr>
+                    <tr class="a">
+                        <td>80</td>
+                        <td>86</td>
+                        <td>98</td>
+                    </tr>
+                </table>
+                <h4>Change Table Width</h4>
+                <button onclick="changeTableWidth(300)" class="change">300px</button>
+                <button onclick="changeTableWidth(600)" class="change">600px</button>
+                <h4>Change Border and Spacing Width</h4>
+                <button onclick="changeBorderWidth(1)" class="change">1px</button>
+                <button onclick="changeBorderWidth(4)" class="change">4px</button>
+                <button onclick="changeBorderWidth(8)" class="change">8px</button>
+                <h4>Change Table Color</h4>
+                <button onclick="changeTableColor('#ffc5c8')" class="red"></button>
+                <button onclick="changeTableColor('#c7ffc5')" class="green"></button>
+                <button onclick="changeTableColor('#c5e0ff')" class="blue"></button>
+                <button onclick="changeTableColor('#ffd7c5')" class="oran"></button>
+                <h4>Reset</h4>
+                <button onclick="resetTable()" class="change">Reset</button>
+            </article>
+
+            <article class="blog-post" id="post-4">
+                <h3>Image Hover Overlay Effect & Polaroid Image Switcher</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="photos/1.webp" alt="柴犬與烤肉">
+                        <div class="overlay">
+                            <h3 class="overlay-title">柴犬與烤肉</h3>
+                            <div class="overlay-meta">
+                                <span>48mm</span>
+                                <span>f/5.0</span>
+                                <span>1/50s</span>
+                                <span>ISO 2500</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/3.webp" alt="柴犬">
+                        <div class="overlay">
+                            <h3 class="overlay-title">柴犬</h3>
+                            <div class="overlay-meta">
+                                <span>43mm</span>
+                                <span>f/4.8</span>
+                                <span>1/80s</span>
+                                <span>ISO 4500</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/7.webp" alt="柴犬">
+                        <div class="overlay">
+                            <h3 class="overlay-title">柴犬</h3>
+                            <div class="overlay-meta">
+                                <span>157mm</span>
+                                <span>f/3.0</span>
+                                <span>1/60s</span>
+                                <span>ISO 8000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/8.webp" alt="中秋烤肉">
+                        <div class="overlay">
+                            <h3 class="overlay-title">中秋烤肉</h3>
+                            <div class="overlay-meta">
+                                <span>64mm</span>
+                                <span>f/6.0</span>
+                                <span>1/50s</span>
+                                <span>ISO 51200</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photos/9.webp" alt="Cell 的生日禮物">
+                        <div class="overlay">
+                            <h3 class="overlay-title">Cell 的生日禮物</h3>
+                            <div class="overlay-meta">
+                                <span>75mm</span>
+                                <span>f/4.5</span>
+                                <span>1/80s</span>
+                                <span>ISO 8000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item-more" onclick="window.location='gallery.html'">
+                        <img src="photos/10.webp">
+                        <div class="overlay">
+                            <h3 class="overlay-title">在「作品集」查看更多</h3>
+                            <div class="overlay-meta">
+                                <span>點擊後將前往「作品集」</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="gallery-item">
-                <img src="photos/3.webp" alt="柴犬">
-                <div class="overlay">
-                    <h3 class="overlay-title">柴犬</h3>
-                    <div class="overlay-meta">
-                        <span>43mm</span>
-                        <span>f/4.8</span>
-                        <span>1/80s</span>
-                        <span>ISO 4500</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="photos/7.webp" alt="柴犬">
-                <div class="overlay">
-                    <h3 class="overlay-title">柴犬</h3>
-                    <div class="overlay-meta">
-                        <span>157mm</span>
-                        <span>f/3.0</span>
-                        <span>1/60s</span>
-                        <span>ISO 8000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="photos/8.webp" alt="中秋烤肉">
-                <div class="overlay">
-                    <h3 class="overlay-title">中秋烤肉</h3>
-                    <div class="overlay-meta">
-                        <span>64mm</span>
-                        <span>f/6.0</span>
-                        <span>1/50s</span>
-                        <span>ISO 51200</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="photos/9.webp" alt="Cell 的生日禮物">
-                <div class="overlay">
-                    <h3 class="overlay-title">Cell 的生日禮物</h3>
-                    <div class="overlay-meta">
-                        <span>75mm</span>
-                        <span>f/4.5</span>
-                        <span>1/80s</span>
-                        <span>ISO 8000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item-more" onclick="window.location='gallery.html'">
-                <img src="photos/10.webp">
-                <div class="overlay">
-                    <h3 class="overlay-title">在「作品集」查看更多</h3>
-                    <div class="overlay-meta">
-                        <span>點擊後將前往「作品集」</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
         </article>
-    </section>
-</main>
-<footer class="site-footer">
-    <p>&copy; 2025 Kevin Lee. All Rights Reserved.</p>
-</footer>
-<div id="lightbox" class="lightbox-overlay">
-    <span class="lightbox-close">&times;</span>
-    
-    <span class="lightbox-nav lightbox-prev">&#10094;</span>
-    <span class="lightbox-nav lightbox-next">&#10095;</span>
-    
-    <img src="" alt="放大預覽" class="lightbox-image">
-    <div class="lightbox-counter"></div>
-</div>
-<script src="script.js"></script>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2025 Kevin Lee. All Rights Reserved.</p>
+    </footer>
+    <div id="lightbox" class="lightbox-overlay">
+        <span class="lightbox-close">&times;</span>
+
+        <span class="lightbox-nav lightbox-prev">&#10094;</span>
+        <span class="lightbox-nav lightbox-next">&#10095;</span>
+
+        <img src="" alt="放大預覽" class="lightbox-image">
+        <div class="lightbox-counter"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
